@@ -10,11 +10,11 @@ namespace Padarosa.Model
 {
     public class Banco
     {
-        private const string SERVER = "10.141.49.43",
-                            PORT = "3306",
-                            DATABASE = "Padarosa",
-                            UID = "Admin",
-                            PWD = "senac";
+        private const string SERVER = "localhost",
+                            PORT = "49170",
+                            DATABASE = "padarosa",
+                            UID = "root",
+                            PWD = "";
 
         // Método para conectar ao bd. Deve ser instanciado por um objeto MySqlConnection
         public MySqlConnection ObterConexao()

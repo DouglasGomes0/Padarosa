@@ -61,6 +61,7 @@
             this.btnGestaoProdutos.TabIndex = 2;
             this.btnGestaoProdutos.Text = "Gestão de Produtos";
             this.btnGestaoProdutos.UseVisualStyleBackColor = false;
+            this.btnGestaoProdutos.Click += new System.EventHandler(this.btnGestaoProdutos_Click);
             // 
             // btnLancarComandas
             // 
@@ -74,6 +75,7 @@
             this.btnLancarComandas.TabIndex = 3;
             this.btnLancarComandas.Text = "Lançamento de comandas";
             this.btnLancarComandas.UseVisualStyleBackColor = false;
+            this.btnLancarComandas.Click += new System.EventHandler(this.btnLancarComandas_Click);
             // 
             // btnGestaoUsuarios
             // 
@@ -86,6 +88,7 @@
             this.btnGestaoUsuarios.TabIndex = 4;
             this.btnGestaoUsuarios.Text = "Gestão de Usuários";
             this.btnGestaoUsuarios.UseVisualStyleBackColor = false;
+            this.btnGestaoUsuarios.Click += new System.EventHandler(this.btnGestaoUsuarios_Click);
             // 
             // btnCaixa
             // 
@@ -98,6 +101,7 @@
             this.btnCaixa.TabIndex = 5;
             this.btnCaixa.Text = "Caixa";
             this.btnCaixa.UseVisualStyleBackColor = false;
+            this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
             // 
             // pibLogo
             // 
@@ -117,9 +121,9 @@
             this.lblLogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogado.Location = new System.Drawing.Point(5, 429);
             this.lblLogado.Name = "lblLogado";
-            this.lblLogado.Size = new System.Drawing.Size(187, 17);
+            this.lblLogado.Size = new System.Drawing.Size(241, 17);
             this.lblLogado.TabIndex = 6;
-            this.lblLogado.Text = "Você está logado como: ";
+            this.lblLogado.Text = "Você está logado como: usuario";
             // 
             // FormMenuPrincipal
             // 

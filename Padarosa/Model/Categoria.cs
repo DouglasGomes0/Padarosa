@@ -15,22 +15,22 @@ namespace Padarosa.Model
 
         public int Cadastrar()
         {
-
+            return 0;
         }
 
         public DataTable Listar()
         {
-
+            return new DataTable();
         }
 
         public int Excluir()
         {
-
+            return 0;
         }
 
         public int Modificar()
         {
-
+            return 0;
         }
 
 
