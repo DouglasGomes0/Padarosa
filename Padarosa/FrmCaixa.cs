@@ -12,7 +12,7 @@ namespace Padarosa
 {
     public partial class FrmCaixa : Form
     {
-        Model.Usuario Usuario
+        Model.Usuario Usuario;
         public FrmCaixa(Model.Usuario usuario)
         {
             InitializeComponent();

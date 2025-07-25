@@ -31,3 +31,4 @@ C:\Users\douglas.gcribeiro\source\repos\Padarosa\Padarosa\obj\Debug\Padarosa.csp
 C:\Users\douglas.gcribeiro\source\repos\Padarosa\Padarosa\obj\Debug\Padarosa.csproj.Up2Date
 C:\Users\douglas.gcribeiro\source\repos\Padarosa\Padarosa\obj\Debug\Padarosa.exe
 C:\Users\douglas.gcribeiro\source\repos\Padarosa\Padarosa\obj\Debug\Padarosa.pdb
+C:\Users\douglas.gcribeiro\source\repos\Padarosa\Padarosa\obj\Debug\Padarosa.FrmGestaoUsuarios.resources
