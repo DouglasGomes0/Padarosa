@@ -84,14 +84,37 @@ namespace Padarosa
                 MessageBox.Show("nome informado é inválido", "error",
                   MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txbEdicaoSenha.Text.Length < 6)
+            else if (txbEdicaoSenha.Text.Length >= 1 && txbEdicaoSenha.Text.Length < 6)
             {
-                MessageBox.Show("senha deve ter no mínimo 6 caracteres", "error",
-                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("A senha deve ter no mínimo 6 caracteres!", "Erro!",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 //realisar edição no banco de dados
+                this.usuario.NomeCompleto = txbEdicaoNome.Text;
+                this.usuario.Email = txbEdicaoEmail.Text;
+                this.usuario.Senha = txbEdicaoSenha.Text;
+
+                //executar o .Modificar
+                if (this.usuario.Modificar())
+                {
+                    MessageBox.Show("usuário modificado com sucesso", "sucessful",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizarDgv();
+                    //limpar os campos
+                    grbApagar.Enabled = false;
+                    grbEdicao.Enabled = false;
+                    txbEdicaoEmail.Clear();
+                    txbEdicaoSenha.Clear();
+                    txbEdicaoNome.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("falha ao modificar o usuário", "error",
+                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            
 
                 AtualizarDgv();
             }
