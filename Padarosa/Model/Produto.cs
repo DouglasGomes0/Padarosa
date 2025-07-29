@@ -21,14 +21,15 @@ namespace Padarosa.Model
 
         public bool CadastrarProduto()
         {
-            string comando = "INSERT INTO produtos (nome, preco, id_categoria) " +
-              "VALUES (@nome, @preco, @id_categoria)";
+            string comando = "INSERT INTO produtos (nome, preco, id_categoria, id_respcadastro) " +
+              "VALUES (@nome, @preco, @id_categoria, @id_RespCadastro)";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
             cmd.Parameters.AddWithValue("@nome", Nome);
             cmd.Parameters.AddWithValue("@preco", Preco);
             cmd.Parameters.AddWithValue("@id_categoria", IdCategoria);
+            cmd.Parameters.AddWithValue("@id_RespCadastro", IdRespCadastro);
        
             try
             {
@@ -80,14 +81,15 @@ namespace Padarosa.Model
         }
         public bool EditarProduto()
         {
-            string comando = "UPDATE produtos SET nome = @nome, preco = @preco, id_categoria = @id_categoria";
+            string comando = "UPDATE produtos SET nome = @nome, preco = @preco, id_categoria = @id_categoria,id_RespCadastro = @id_RespCadastro WHERE id = @id";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
-
+            cmd.Parameters.AddWithValue("id", Id);
             cmd.Parameters.AddWithValue("@nome", Nome);
             cmd.Parameters.AddWithValue("@preco", Preco);
             cmd.Parameters.AddWithValue("@id_categoria", IdCategoria);
+            cmd.Parameters.AddWithValue("@id_RespCadastro",IdRespCadastro);
            
 
             cmd.Prepare();
@@ -113,6 +115,22 @@ namespace Padarosa.Model
         public DataTable ListarProdutos()
         {
             string comando = "SELECT * FROM produtos";
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Prepare();
+            // Declarar tabela que irá receber o resultado:
+            DataTable tabela = new DataTable();
+            // Preencher a tabela com o resultado da consulta
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
+        }
+        public DataTable ListarCategoria()
+        {
+            string comando = "SELECT * FROM categorias";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
